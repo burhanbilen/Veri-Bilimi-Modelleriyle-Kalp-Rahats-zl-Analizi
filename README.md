@@ -1,1 +1,1 @@
-# Veri-Bilimi-Modelleriyle-Kalp-Rahats-zl-Analizi
+# Veri Bilimi Modelleriyle Kalp Rahatsızlığı Analizi
