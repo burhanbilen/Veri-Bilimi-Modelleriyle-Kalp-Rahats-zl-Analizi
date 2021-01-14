@@ -69,7 +69,6 @@ plt.savefig("genisletilmis_hasta_yas_dagilimi.png")
 plt.show()
 
 
-
 #<==================== Girdi ve Çıktı Değişkenlerinin Tanımlanması ===================>
 girdi = np.array(veri.iloc[:,:13].values)
 cikti = np.array(veri.iloc[:,-1:].values)
@@ -77,11 +76,12 @@ cikti = np.array(veri.iloc[:,-1:].values)
 
 #<================================ Veri Ölçeklendirme ================================>
 mm = MinMaxScaler()
-girdi = mm.fit_transform(girdi)
 
 
 #<=========================== Veri Test ve Eğitim Ayrışımı ===========================>
 X_train, X_test, y_train, y_test = train_test_split(girdi, cikti, test_size = 0.20, random_state = 0)
+X_train = mm.fit_transform(X_train)
+X_test = mm.transform(X_test)
 
 
 #<==================================== Metrikler =====================================>
